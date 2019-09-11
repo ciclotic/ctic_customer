@@ -1,0 +1,248 @@
+dashboard:
+    path:     /
+    defaults:
+        _controller: 'CTIC\App\Dashboard\Infrastructure\DashboardController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\App\Dashboard\Application\CreateDashboardController'
+
+login:
+    path:     /login
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\LoginController'
+        _controller_method: 'loginAction'
+        _controller_create: 'CTIC\App\User\Application\CreateLoginController'
+
+logout:
+    path:     /logout
+    defaults:
+        _controller: 'CTIC\App\User\Infrastructure\LoginController'
+        _controller_method: 'logoutAction'
+        _controller_create: 'CTIC\App\User\Application\CreateLoginController'
+
+#Customer
+
+GET_clientes_listado:
+    path:     /clientes/listado
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerController'
+
+GET_clientes_mostrar:
+    path:     /clientes/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerController'
+
+GET_clientes_crear:
+    path:     /clientes/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerController'
+
+GET_clientes_modificar:
+    path:     /clientes/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerController'
+
+POST_clientes_eliminar:
+    path:     /clientes/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerController'
+
+POST_clientes_eliminargrupo:
+    path:     /clientes/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerController'
+
+
+POST_clientes_descargar:
+    path:     /clientes/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerController'
+
+#Customer Observation Category
+
+GET_clientes_categoriaobservaciones_listado:
+    path:     /clientes/categoriaobservaciones/listado
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerObservationCategoryController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerObservationCategoryController'
+
+GET_clientes_categoriaobservaciones_mostrar:
+    path:     /clientes/categoriaobservaciones/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerObservationCategoryController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerObservationCategoryController'
+
+GET_clientes_categoriaobservaciones_crear:
+    path:     /clientes/categoriaobservaciones/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerObservationCategoryController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerObservationCategoryController'
+
+GET_clientes_categoriaobservaciones_modificar:
+    path:     /clientes/categoriaobservaciones/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerObservationCategoryController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerObservationCategoryController'
+
+POST_clientes_categoriaobservaciones_eliminar:
+    path:     /clientes/categoriaobservaciones/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerObservationCategoryController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerObservationCategoryController'
+
+POST_clientes_categoriaobservaciones_eliminargrupo:
+    path:     /clientes/categoriaobservaciones/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerObservationCategoryController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerObservationCategoryController'
+
+
+POST_clientes_categoriaobservaciones_descargar:
+    path:     /clientes/categoriaobservaciones/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerObservationCategoryController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerObservationCategoryController'
+
+#Customer Contact Category
+
+GET_clientes_categoriacontactos_listado:
+    path:     /clientes/categoriacontactos/listado
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerContactCategoryController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerContactCategoryController'
+
+GET_clientes_categoriacontactos_mostrar:
+    path:     /clientes/categoriacontactos/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerContactCategoryController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerContactCategoryController'
+
+GET_clientes_categoriacontactos_crear:
+    path:     /clientes/categoriacontactos/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerContactCategoryController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerContactCategoryController'
+
+GET_clientes_categoriacontactos_modificar:
+    path:     /clientes/categoriacontactos/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerContactCategoryController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerContactCategoryController'
+
+POST_clientes_categoriacontactos_eliminar:
+    path:     /clientes/categoriacontactos/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerContactCategoryController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerContactCategoryController'
+
+POST_clientes_categoriacontactos_eliminargrupo:
+    path:     /clientes/categoriacontactos/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerContactCategoryController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerContactCategoryController'
+
+
+POST_clientes_categoriacontactos_descargar:
+    path:     /clientes/categoriacontactos/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerContactCategoryController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerContactCategoryController'
+
+#Customer Group
+
+GET_clientes_grupos_listado:
+    path:     /clientes/grupos/listado
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerGroupController'
+        _controller_method: 'indexAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerGroupController'
+
+GET_clientes_grupos_mostrar:
+    path:     /clientes/grupos/mostrar/{id}
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerGroupController'
+        _controller_method: 'showAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerGroupController'
+
+GET_clientes_grupos_crear:
+    path:     /clientes/grupos/crear
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerGroupController'
+        _controller_method: 'createAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerGroupController'
+
+GET_clientes_grupos_modificar:
+    path:     /clientes/grupos/modificar/{id}
+    methods:  [GET, POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerGroupController'
+        _controller_method: 'updateAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerGroupController'
+
+POST_clientes_grupos_eliminar:
+    path:     /clientes/grupos/eliminar/{id}
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerGroupController'
+        _controller_method: 'deleteAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerGroupController'
+
+POST_clientes_grupos_eliminargrupo:
+    path:     /clientes/grupos/eliminargrupo
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerGroupController'
+        _controller_method: 'bulkDeleteAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerGroupController'
+
+
+POST_clientes_grupos_descargar:
+    path:     /clientes/grupos/descargar
+    methods:  [POST]
+    defaults:
+        _controller: 'CTIC\Customer\Customer\Infrastructure\CustomerGroupController'
+        _controller_method: 'downloadAction'
+        _controller_create: 'CTIC\Customer\Customer\Application\CreateCustomerGroupController'

@@ -1,0 +1,245 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Nombre fiscal</label>
+                {{ resource.name }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Nombre comercial</label>
+                {{ resource.businessName }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>CIF / NIF</label>
+                {{ resource.identification }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Dirección</label>
+                {{ resource.address }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Código Postal</label>
+                {{ resource.postalCode }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Población/Ciudad</label>
+                {{ resource.town }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Provincia/Estado</label>
+                {{ resource.province }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>País</label>
+                {{ resource.country }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Banco</label>
+                {{ resource.bank }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Iban</label>
+                {{ resource.iban }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Día de pago 1</label>
+                {{ resource.paymentDay1 }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Día de pago 2</label>
+                {{ resource.paymentDay2 }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Descuento pronto pago</label>
+                {{ resource.discountSoonPayment }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Tiene descuento cliente</label>
+                {{ resource.discountCustomer }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Descuento por producto</label>
+                {{ resource.discountProduct }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Descuento por servicio</label>
+                {{ resource.discountService }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Alertar cambio de precios</label>
+                {{ resource.alertPriceChanges }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Tipo</label>
+                {{ resource.type }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Número de comensales</label>
+                {{ resource.dinners }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Género</label>
+                {{ resource.gender }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Fecha de nacimiento (TODO)</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Referencia</label>
+                {{ resource.reference }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Periodicidad</label>
+                {{ resource.periodicity }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Método de pago por defecto</label>
+                {{ resource.defaultPaymentMethod }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Tarifa por defecto</label>
+                {{ resource.defaultRate }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>IVA por defecto</label>
+                {{ resource.defaultIva }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>IRPF por defecto</label>
+                {{ resource.defaultIrpf }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Recomendado por el cliente</label>
+                {{ resource.recommendedByCustomer }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Área de realización por defecto</label>
+                {{ resource.defaultRealizationArea }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Grupos</label>
+                {% for customerGroup in resource.customerGroup %}
+                    <div>
+                        Grupo: {{ customerGroup.name }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Formas de contacto</label>
+                {% for customerContact in resource.customerContact %}
+                    <div>
+                        <p>Categoría: {% if customerContact.customerContactCategory is not null %}{{ customerContact.customerContactCategory.name }}{% endif %}
+                        <br>{{ customerContact.value }}
+                        <br>Persona de contacto: {{ customerContact.contactPerson }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Observaciones</label>
+                {% for customerObservation in resource.customerObservation %}
+                    <div>
+                        <p>Categoría: {% if customerObservation.customerObservationCategory is not null %}{{ customerObservation.customerObservationCategory.name }}{% endif %}
+                        <br>Título alternativo: {{ customerObservation.alternativeTitle }}
+                        <br>{{ customerObservation.observation }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Direcciones de entrega</label>
+                {% for customerAddress in resource.customerAddress %}
+                    <div>
+                        <p>
+                            Dirección: {{ customerAddress.address }}
+                            <br>Código postal: {{ customerAddress.postalCode }}
+                            <br>Población/Ciudad: {{ customerAddress.town }}
+                            <br>Provincia: {{ customerAddress.province }}
+                            <br>País: {{ customerAddress.country }}
+                            <br>Teléfono: {{ customerAddress.phone }}
+                            <br>Persona de contacto: {{ customerAddress.contactPerson }}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label>Habilitado</label>
+                {{ (resource.enabled is empty)? 'No' : 'Si' }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Empresa</label>
+                {{ resource.company.taxName }}
+            </div>
+        </div>
+        <br>
+        <div class="cancel-button">
+            {% include '/Form/Buttons/_cancel.html.twig' with {'paths': {'cancel': path('GET_' ~ metadata.parameters.route.root ~ '_' ~  metadata.parameters.route.actions.list, configuration.vars.route.parameters|default({}))}} %}
+        </div>
+    </div>
+</div>
