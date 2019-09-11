@@ -3,10 +3,12 @@ namespace CTIC\Customer\Customer\Domain;
 
 use CTIC\App\Company\Domain\Company;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\Customer\Customer\Domain\Validation\CustomerObservationValidation;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\Customer\Customer\Infrastructure\Repository\CustomerObservationRepository")
  */
 class CustomerObservation implements CustomerObservationInterface

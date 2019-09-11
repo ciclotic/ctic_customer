@@ -8,11 +8,13 @@ use CTIC\App\Rate\Domain\Rate;
 use CTIC\App\RealizationArea\Domain\RealizationArea;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 use CTIC\App\Base\Domain\IdentifiableTrait;
 use CTIC\Customer\Customer\Domain\Validation\CustomerValidation;
 use CTIC\App\Company\Domain\Company;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="CTIC\Customer\Customer\Infrastructure\Repository\CustomerRepository")
  */
 class Customer implements CustomerInterface
